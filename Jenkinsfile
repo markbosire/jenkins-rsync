@@ -1,5 +1,5 @@
 pipeline {
-    agent agent
+    agent {label 'agent'}
 
     environment {
         GIT_REPO = 'https://github.com/markbosire/jenkins-rsync.git'
