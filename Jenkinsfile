@@ -41,6 +41,7 @@ pipeline {
                     branches.each { branch, dir ->
                         sh """
                             git checkout ${branch}
+			    mkdir -p ${BASE_DIR}/${dir}/
                             rsync -avz --delete --exclude='.git/' ./ ${BASE_DIR}/${dir}/
                         """
                     }
